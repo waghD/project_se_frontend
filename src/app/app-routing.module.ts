@@ -4,17 +4,12 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'freightform',
     pathMatch: 'full'
   },
-  {
-    path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
-  },
-  {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
-  }
+  { path: 'freightform', loadChildren: './pages/freightform/freightform.module#FreightformPageModule' },
+  { path: 'freightlist', loadChildren: './pages/freightlist/freightlist.module#FreightlistPageModule' },
+  { path: 'contracts', loadChildren: './pages/contracts/contracts.module#ContractsPageModule' }
 ];
 
 @NgModule({
