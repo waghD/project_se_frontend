@@ -9,7 +9,9 @@ const routes: Routes = [
   },
   { path: 'freightform', loadChildren: './pages/freightform/freightform.module#FreightformPageModule' },
   { path: 'freightlist', loadChildren: './pages/freightlist/freightlist.module#FreightlistPageModule' },
-  { path: 'contracts', loadChildren: './pages/contracts/contracts.module#ContractsPageModule' }
+  { path: 'contracts', loadChildren: './pages/contracts/contracts.module#ContractsPageModule' },
+  { path: 'newfreitht', loadChildren: './pages/newfreitht/newfreitht.module#NewfreithtPageModule' },
+  { path: 'resultlist', loadChildren: './pages/resultlist/resultlist.module#ResultlistPageModule' }
 ];
 
 @NgModule({
