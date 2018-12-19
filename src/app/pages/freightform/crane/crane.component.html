@@ -1,0 +1,93 @@
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-item-divider>
+        <ion-label>Einsatzdaten</ion-label>
+      </ion-item-divider>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label>Datum:</ion-label>
+        <ion-datetime [pickerFormat]="datePickerFormat" [displayFormat]="dateDisplayFormat" [min]="minDate" [max]="maxDate" [(ngModel)]="dateModel"></ion-datetime>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-label>Einsatzort:</ion-label>
+        <ion-input type="text" [(ngModel)]="operationPlace"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-label>Einsatzdauer:</ion-label>
+        <ion-datetime [displayFormat]="durationDisplayFormat" [pickerFormat]="durationPickerFormat" [(ngModel)]="durationModel"></ion-datetime>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item-divider>
+        <ion-label>Lastspezifikation</ion-label>
+      </ion-item-divider>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label>Max. ausfahrbare Länge:</ion-label>
+        <ion-input type="number" [(ngModel)]="loadLength"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-label>Last auf max. Länge:</ion-label>
+        <ion-input type="number" [(ngModel)]="loadWeight"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item-divider>
+        <ion-label>Krandimensionen</ion-label>
+      </ion-item-divider>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label>Breite Kran:</ion-label>
+        <ion-input type="number" [(ngModel)]="craneWidth"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-label>Breite Stützen:</ion-label>
+        <ion-input type="number" [(ngModel)]="craneSupportWith"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label>Länge:</ion-label>
+        <ion-input type="number" [(ngModel)]="craneLength"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-label>Höhe:</ion-label>
+        <ion-input type="number" [(ngModel)]="craneHeight"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label [position]="stackedLabel">Zusätzliches Transportgewicht</ion-label>
+        <ion-input type="number" [(ngModel)]="transportLoad"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-grid>

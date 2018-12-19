@@ -5,5 +5,20 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Hier befindet sich ein Formular um einen Frächter zu finden</h3>
+
+  <ion-item>
+    <ion-label>Dienstleistungstyp</ion-label>
+    <ion-select [(ngModel)]="typeModel">
+      <ion-select-option [value]="typeSelectTransportVal">Transport</ion-select-option>
+      <ion-select-option [value]="typeSelectKranVal">Kran</ion-select-option>
+      <ion-select-option [value]="typeSelectInstanthaltungVal">Instandhaltung</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <app-transport *ngIf="typeModel === typeSelectTransportVal"></app-transport>
+  <app-repair *ngIf="typeModel === typeSelectInstanthaltungVal"></app-repair>
+  <app-crane *ngIf="typeModel === typeSelectKranVal"></app-crane>
 </ion-content>
+
+<ion-footer>
+  <ion-button [fill]="searchBtnFill" [expand]="searchBtnExpand" [size]="searchBtnSize">Suchen</ion-button>
+</ion-footer>

@@ -6,6 +6,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { FreightformPage } from './freightform.page';
+import { TransportComponent } from './transport/transport.component';
+import { RepairComponent } from './repair/repair.component';
+import { CraneComponent } from './crane/crane.component';
 
 const routes: Routes = [
   {
@@ -21,6 +24,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [FreightformPage]
+  declarations: [FreightformPage, TransportComponent, RepairComponent, CraneComponent]
 })
 export class FreightformPageModule {}

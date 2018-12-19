@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FreightformPage implements OnInit {
 
+  searchBtnFill = 'solid';
+  searchBtnExpand = 'block';
+  searchBtnSize = 'default';
+
+  typeModel: string;
+  typeSelectTransportVal = 'transport';
+  typeSelectKranVal = 'crane';
+  typeSelectInstanthaltungVal = 'repair';
+
   constructor() { }
 
   ngOnInit() {

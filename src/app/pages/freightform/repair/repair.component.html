@@ -1,0 +1,55 @@
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-item-divider>
+        <ion-label>Termin</ion-label>
+      </ion-item-divider>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label>Ort:</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-label>Zeit:</ion-label>
+        <ion-datetime [min]="minDate" [max]="maxDate" [pickerFormat]="datePickerFormat" [displayFormat]="dateDisplayFormat" [(ngModel)]="dateModel"></ion-datetime>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-label>Arbeitszeit:</ion-label>
+        <ion-datetime [displayFormat]="durationDisplayFormat" [pickerFormat]="durationPickerFormat" [(ngModel)]="durationModel"></ion-datetime>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item-divider>
+        <ion-label>Beschädigter Gegenstand</ion-label>
+      </ion-item-divider>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label>Anzahl:</ion-label>
+        <ion-input [(ngModel)]="count" type="number"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-label>Typ</ion-label>
+        <ion-select [(ngModel)]="selectType">
+          <ion-select-option [value]="selectTruck">LKW</ion-select-option>
+          <ion-select-option [value]="selectCar">PKW</ion-select-option>
+          <ion-select-option [value]="selectContainer">Kontainer</ion-select-option>
+          <ion-select-option [value]="selectPalette">Palette</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-grid>
