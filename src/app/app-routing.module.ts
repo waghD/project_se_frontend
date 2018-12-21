@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'freightlist', loadChildren: './pages/freightlist/freightlist.module#FreightlistPageModule' },
   { path: 'contracts', loadChildren: './pages/contracts/contracts.module#ContractsPageModule' },
   { path: 'newfreitht', loadChildren: './pages/newfreitht/newfreitht.module#NewfreithtPageModule' },
-  { path: 'resultlist', loadChildren: './pages/resultlist/resultlist.module#ResultlistPageModule' }
+  { path: 'resultlist', loadChildren: './pages/resultlist/resultlist.module#ResultlistPageModule' },
+  { path: 'resultdetails', loadChildren: './pages/resultdetails/resultdetails.module#ResultdetailsPageModule' }
 ];
 
 @NgModule({

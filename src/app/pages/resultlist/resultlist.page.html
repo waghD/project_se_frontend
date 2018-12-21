@@ -1,9 +1,207 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>resultlist</ion-title>
+    <ion-title>Ergebnis</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-card style="height: 20vh; margin: 3vh auto;">
+    <ion-item [lines]="noLines" style="height: 20vh;" (click)="clicked()">
+      <div slot="start" style="width: 20vh; height: 20vh;">
+        <img src="./assets/imgs/logo_placeholder.png" alt="LOGO" style="height: 95%; width: auto; margin-top: 2.5%">
+      </div>
+      <div style="position:absolute; left: 25vh; right: 30%; top: 0; bottom: 0;">
+        <ion-grid style="width: 100%; height: 100%;">
+          <ion-row>
+            <ion-col>
+              <div style="font-size: 24px;">Super Frächter GmbH</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div style="font-size: 18px;">Max Mustermann</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="1">
+              <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col size="1">
+              <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col size="1">
+              <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col size="1">
+              <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col size="1">
+              <ion-icon name="star-half"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <div slot="end" style="height: 100%; width: 30%">
+        <ion-grid style="height: 100%; padding: 0;">
+          <ion-row style="height: 100%; padding: 0;">
+            <ion-col size="4" *ngIf="true" style="height: 100%; padding: 0;">
+              <div style="height: 100%; width: 90%; margin: 0 auto; background-color: #10dc60; border-radius: 2px; transform: skew(-15deg)">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) skew(15deg);">
+                  <ion-icon name="ribbon" size="large" style="color: white;"></ion-icon>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="4" *ngIf="true" style="height: 100%; padding: 0;">
+              <div style="height: 100%; width: 90%; margin: 0 auto; background-color: mediumslateblue; border-radius: 2px; transform: skew(-15deg)">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) skew(15deg);">
+                  <ion-icon name="thumbs-up" size="large" style="color: white;"></ion-icon>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="4" *ngIf="true" style="height: 100%; padding: 0;">
+              <div style="height: 100%; width: 90%; margin: 0 auto; background-color: #0cd1e8; border-radius: 2px; transform: skew(-15deg)">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) skew(15deg);">
+                  <ion-icon name="happy" size="large" style="color: white;"></ion-icon>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-item>
+  </ion-card>
+
+  <ion-card style="height: 20vh; margin: 3vh auto;">
+    <ion-item [lines]="noLines" style="height: 20vh;" (click)="clicked()">
+      <div slot="start" style="width: 20vh; height: 20vh;">
+        <img src="./assets/imgs/logo_placeholder.png" alt="LOGO" style="height: 95%; width: auto; margin-top: 2.5%">
+      </div>
+      <div style="position:absolute; left: 25vh; right: 30%; top: 0; bottom: 0;">
+        <ion-grid style="width: 100%; height: 100%;">
+          <ion-row>
+            <ion-col>
+              <div style="font-size: 24px;">Super Fahrer GmbH</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div style="font-size: 18px;">Herbert Vielfahrer</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="1">
+              <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col size="1">
+              <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col size="1">
+              <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col size="1">
+              <ion-icon name="star-half"></ion-icon>
+            </ion-col>
+            <ion-col size="1">
+              <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <div slot="end" style="height: 100%; width: 30%">
+        <ion-grid style="height: 100%; padding: 0;">
+          <ion-row style="height: 100%; padding: 0;">
+            <ion-col size="4" *ngIf="false" style="height: 100%; padding: 0;">
+              <div style="height: 100%; width: 90%; margin: 0 auto; background-color: #10dc60; border-radius: 2px; transform: skew(-15deg)">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) skew(15deg);">
+                  <ion-icon name="ribbon" size="large" style="color: white;"></ion-icon>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="4" *ngIf="false" style="height: 100%; padding: 0;">
+              <div style="height: 100%; width: 90%; margin: 0 auto; background-color: mediumslateblue; border-radius: 2px; transform: skew(-15deg)">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) skew(15deg);">
+                  <ion-icon name="thumbs-up" size="large" style="color: white;"></ion-icon>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="4" *ngIf="true" style="height: 100%; padding: 0;">
+              <div style="height: 100%; width: 90%; margin: 0 auto; background-color: #0cd1e8; border-radius: 2px; transform: skew(-15deg)">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) skew(15deg);">
+                  <ion-icon name="happy" size="large" style="color: white;"></ion-icon>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-item>
+  </ion-card>
+
+  <ion-card style="height: 20vh; margin: 3vh auto;">
+    <ion-item [lines]="noLines" style="height: 20vh;" (click)="clicked()">
+      <div slot="start" style="width: 20vh; height: 20vh;">
+        <img src="./assets/imgs/logo_placeholder.png" alt="LOGO" style="height: 95%; width: auto; margin-top: 2.5%">
+      </div>
+      <div style="position:absolute; left: 25vh; right: 30%; top: 0; bottom: 0;">
+        <ion-grid style="width: 100%; height: 100%;">
+          <ion-row>
+            <ion-col>
+              <div style="font-size: 24px;">Bekannter Frächter GmbH</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div style="font-size: 18px;">Michaela Musterfrau</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="1">
+              <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col size="1">
+              <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col size="1">
+              <ion-icon name="star"></ion-icon>
+            </ion-col>
+            <ion-col size="1">
+              <ion-icon name="star-half"></ion-icon>
+            </ion-col>
+            <ion-col size="1">
+              <ion-icon name="star-outline"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <div slot="end" style="height: 100%; width: 30%">
+        <ion-grid style="height: 100%; padding: 0;">
+          <ion-row style="height: 100%; padding: 0;">
+            <ion-col size="4" *ngIf="false" style="height: 100%; padding: 0;">
+              <div style="height: 100%; width: 90%; margin: 0 auto; background-color: #10dc60; border-radius: 2px; transform: skew(-15deg)">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) skew(15deg);">
+                  <ion-icon name="ribbon" size="large" style="color: white;"></ion-icon>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="4" *ngIf="true" style="height: 100%; padding: 0;">
+              <div style="height: 100%; width: 90%; margin: 0 auto; background-color: mediumslateblue; border-radius: 2px; transform: skew(-15deg)">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) skew(15deg);">
+                  <ion-icon name="thumbs-up" size="large" style="color: white;"></ion-icon>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="4" *ngIf="false" style="height: 100%; padding: 0;">
+              <div style="height: 100%; width: 90%; margin: 0 auto; background-color: #0cd1e8; border-radius: 2px; transform: skew(-15deg)">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) skew(15deg);">
+                  <ion-icon name="happy" size="large" style="color: white;"></ion-icon>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-item>
+  </ion-card>
+
 
 </ion-content>

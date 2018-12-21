@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-resultlist',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultlistPage implements OnInit {
 
-  constructor() { }
+  noLines = 'none';
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  clicked(): void {
+    this.router.navigateByUrl('/resultdetails')
+        .then(() => {
+          console.log('navigated');
+        })
+        .catch(error => {
+          console.error('navigation error');
+        });
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-freightform',
@@ -16,9 +17,13 @@ export class FreightformPage implements OnInit {
   typeSelectKranVal = 'crane';
   typeSelectInstanthaltungVal = 'repair';
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  send(): void {
+    this.router.navigateByUrl('/resultlist');
   }
 
 }

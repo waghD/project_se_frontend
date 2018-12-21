@@ -5,7 +5,6 @@
 </ion-header>
 
 <ion-content padding>
-
   <ion-item>
     <ion-label>Dienstleistungstyp</ion-label>
     <ion-select [(ngModel)]="typeModel">
@@ -20,5 +19,5 @@
 </ion-content>
 
 <ion-footer>
-  <ion-button [fill]="searchBtnFill" [expand]="searchBtnExpand" [size]="searchBtnSize">Suchen</ion-button>
+  <ion-button [fill]="searchBtnFill" [expand]="searchBtnExpand" [size]="searchBtnSize" (click)="send()" style="width: 90%; margin: 15px auto;">Suchen</ion-button>
 </ion-footer>
