@@ -4,6 +4,11 @@
   width: 100%;
   text-align: center;
   margin: auto;
+  transform: translateY(-50%);
+}
+
+.small-card {
+  height: 26.7vh;
 }
 
 .btn-card-outer {
@@ -11,6 +16,44 @@
   left: 0;
   right: 0;
   top: 0;
-  height: 70%;
+  height: 48%;
   width: 100%;
+}
+
+.card-btn-vertical-outer {
+  position: relative;
+  height: 19.5vh;
+  width: 100%;
+}
+
+.card-btn-vertical {
+  position:absolute;
+  width: 100%;
+  left: 0;
+  height: 50%;
+  margin: 0;
+}
+
+.card-btn-vertical-top {
+  top: 0;
+}
+
+.card-btn-vertical-bottom {
+  bottom: 0;
+}
+
+.card-btn {
+  position:absolute;
+  margin: 0px;
+  bottom: 0px;
+  width: 50%;
+  height: 25%;
+}
+
+.card-btn-left {
+  left:0px;
+}
+
+.card-btn-right {
+  right: 0px;
 }

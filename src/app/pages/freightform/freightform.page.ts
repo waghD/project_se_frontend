@@ -26,4 +26,8 @@ export class FreightformPage implements OnInit {
     this.router.navigateByUrl('/resultlist');
   }
 
+  goToHome(): void {
+    this.router.navigateByUrl('/dashboard');
+  }
+
 }
