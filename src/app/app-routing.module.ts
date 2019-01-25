@@ -4,15 +4,18 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'freightform',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   { path: 'freightform', loadChildren: './pages/freightform/freightform.module#FreightformPageModule' },
-  { path: 'freightlist', loadChildren: './pages/freightlist/freightlist.module#FreightlistPageModule' },
-  { path: 'contracts', loadChildren: './pages/contracts/contracts.module#ContractsPageModule' },
-  { path: 'newfreitht', loadChildren: './pages/newfreitht/newfreitht.module#NewfreithtPageModule' },
   { path: 'resultlist', loadChildren: './pages/resultlist/resultlist.module#ResultlistPageModule' },
-  { path: 'resultdetails', loadChildren: './pages/resultdetails/resultdetails.module#ResultdetailsPageModule' }
+  { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
+  { path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardPageModule' },
+  { path: 'freighter/details/:id', loadChildren: './pages/freighterdetails/freighterdetails.module#FreighterdetailsPageModule' },
+  { path: '**', loadChildren: './pages/pagenotfound/pagenotfound.module#PagenotfoundPageModule' },
+
+
+
 ];
 
 @NgModule({

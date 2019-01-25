@@ -1,0 +1,39 @@
+.loginHeadImg{
+  width: 100%;
+  height: auto;
+  position:absolute;
+}
+
+.loginTitle {
+  background: #3a4263;
+  color:white;
+  z-index: 3;
+  position: absolute;
+  top: 26%;
+  height: 50px;
+  font-size: 1.8em;
+  transform: translateY(-50%);
+  text-align:center;
+  line-height: 50px;
+}
+
+.invalidItem {
+  --full-highlight-height: calc(var(--highlight-height) * var(--show-full-highlight));
+  --inset-highlight-height: calc(var(--highlight-height) * var(--show-inset-highlight));
+  --border-color: var(--ion-item-border-color,var(--ion-border-color,red));
+}
+
+.centerLoginField {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 360px;
+  left: 50%;
+  margin: 0;
+}
+
+.loginBackground {
+  --background: white;
+  color: gray;
+}

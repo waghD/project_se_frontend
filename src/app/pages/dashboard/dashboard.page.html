@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Übersicht</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card style="height: 50vh;">
+          <ion-card-content style="font-size: 16px;">
+            Es befinden sich derzeit 1724 Frächter in dieser Datenbank mit einem Gesamt Fuhrpark von: <br/>
+            <ul>
+              <li>7120 LKWs</li>
+              <li>14212 Kleintransporter</li>
+              <li>10 Züge</li>
+              <li>0 Schiffe</li>
+              <li>2 Flugzeuge</li>
+            </ul>
+            Dabei wird in insgesamt 20 Länder geliefert.
+          </ion-card-content>
+          <ion-list>
+            <ion-item>
+              <ion-label>Neuigkeiten und Änderungen etc.</ion-label>
+              <ion-button slot="end">
+                <ion-icon slot="icon-only" [name]="'open'"></ion-icon>
+              </ion-button>
+            </ion-item>
+            <ion-item>
+              <ion-label>Neuigkeiten und Änderungen etc.</ion-label>
+              <ion-button slot="end">
+                <ion-icon slot="icon-only" [name]="'open'"></ion-icon>
+              </ion-button>
+            </ion-item>
+            <ion-item>
+              <ion-label>Neuigkeiten und Änderungen etc.</ion-label>
+              <ion-button slot="end">
+                <ion-icon slot="icon-only" [name]="'open'"></ion-icon>
+              </ion-button>
+            </ion-item>
+            <ion-item>
+              <ion-label>Neuigkeiten und Änderungen etc.</ion-label>
+              <ion-button slot="end">
+                <ion-icon slot="icon-only" [name]="'open'"></ion-icon>
+              </ion-button>
+            </ion-item>
+          </ion-list>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card style="height: 30vh;">
+          <div class="btn-card-outer">
+            <h4 class="btn-card-title">Es müssen bei 4 Frächtern Daten aktualisiert werden.</h4>
+          </div>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-button [expand]="'block'" [fill]="'solid'">Frächter Anzeigen</ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button [expand]="'block'" [fill]="'solid'">Erinnerung Senden</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card style="height: 30vh;">
+          <div class="btn-card-outer">
+            <h4 class="btn-card-title">Nach einem Frächter Suchen</h4>
+          </div>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-button [expand]="'block'" [fill]="'solid'">Alle Frächter anzeigen</ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button [expand]="'block'" [fill]="'solid'">Frächter suchen</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

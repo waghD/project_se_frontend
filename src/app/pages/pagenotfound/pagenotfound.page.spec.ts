@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewfreithtPage } from './newfreitht.page';
+import { PagenotfoundPage } from './pagenotfound.page';
 
-describe('NewfreithtPage', () => {
-  let component: NewfreithtPage;
-  let fixture: ComponentFixture<NewfreithtPage>;
+describe('PagenotfoundPage', () => {
+  let component: PagenotfoundPage;
+  let fixture: ComponentFixture<PagenotfoundPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewfreithtPage ],
+      declarations: [ PagenotfoundPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewfreithtPage);
+    fixture = TestBed.createComponent(PagenotfoundPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

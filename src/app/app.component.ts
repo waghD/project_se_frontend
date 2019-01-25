@@ -9,23 +9,6 @@ import {StatusBar} from '@ionic-native/status-bar/ngx';
     templateUrl: 'app.component.html'
 })
 export class AppComponent {
-    public appPages = [
-        {
-            title: 'Frächter finden',
-            url: '/freightform',
-            icon: 'home'
-        },
-        {
-            title: 'Frächter Liste',
-            url: '/freightlist',
-            icon: 'list'
-        },
-        {
-            title: 'Aufträge',
-            url: '/contracts',
-            icon: 'home'
-        }
-    ];
 
     constructor(
         private platform: Platform,
