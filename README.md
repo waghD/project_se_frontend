@@ -4,16 +4,16 @@
 
 * Install Ionic with
 
-    npm install -g ionic
+   `npm install -g ionic`
     
- * Install dependancies (run following commands in project folder)
+* Install dependancies (run following commands in project folder)
  
-    npm install
+   `npm install`
     
 * Compile Code
 
-    ionic build
+   `ionic build`
     
 * Run Server
 
-    ionic serve
+   `ionic serve`
