@@ -1,6 +1,6 @@
 ## Steps to setup
 
-* Install Node.js and NPM
+* [Install Node.js and NPM](https://nodejs.org/en/)
 
 * Install Ionic with
 
