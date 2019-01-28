@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar [color]="'secondary'">
     <ion-buttons slot="start">
       <ion-button [fill]="'clear'" (click)="goToHome()">
         <ion-icon slot="icon-only" [name]="'home'"></ion-icon>
@@ -10,17 +10,111 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <ion-label>Dienstleistungstyp</ion-label>
-    <ion-select [(ngModel)]="typeModel">
-      <ion-select-option [value]="typeSelectTransportVal">Transport</ion-select-option>
-      <ion-select-option [value]="typeSelectKranVal">Kran</ion-select-option>
-      <ion-select-option [value]="typeSelectInstanthaltungVal">Instandhaltung</ion-select-option>
-    </ion-select>
-  </ion-item>
-  <app-transport *ngIf="typeModel === typeSelectTransportVal"></app-transport>
-  <app-repair *ngIf="typeModel === typeSelectInstanthaltungVal"></app-repair>
-  <app-crane *ngIf="typeModel === typeSelectKranVal"></app-crane>
+  <ion-grid>
+    <ion-row>
+      <ion-col [size]="2">
+        <ion-item>
+          <ion-label>Transport Typ</ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col *ngFor="let type of transportType" [size]="1">
+        <ion-button [fill]="iconBtnFill" (click)="type.switch(type.id)">
+          <ion-icon slot="icon-only" [name]="type.iconName" [color]="type.iconColor"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item-divider>
+          <ion-label>Transportstrecke</ion-label>
+        </ion-item-divider>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Von</ion-label>
+          <ion-input [(ngModel)]="vonInput" type="text" required></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label>Nach</ion-label>
+          <ion-input [(ngModel)]="toInput" type="text" required></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col [size]="5">
+        <ion-item>
+          <ion-label>Abholzeitpunkt</ion-label>
+          <ion-datetime [displayFormat]="dateDisplayFormat" [pickerFormat]="datePickerFormat"
+                        [(ngModel)]="datePickupModel" [max]="maxDate" [min]="minDate"></ion-datetime>
+        </ion-item>
+      </ion-col>
+      <ion-col [size]="1">
+        <ion-item>
+          <ion-datetime [displayFormat]="timeDisplayFormat" [pickerFormat]="timePickerFormat"
+                        [(ngModel)]="timePickupModel"></ion-datetime>
+        </ion-item>
+      </ion-col>
+      <ion-col [size]="5">
+        <ion-item>
+          <ion-label>Lieferzeitpunkt</ion-label>
+          <ion-datetime [displayFormat]="dateDisplayFormat" [pickerFormat]="datePickerFormat"
+                        [(ngModel)]="dateDropModel" [max]="maxDate" [min]="minDate"></ion-datetime>
+        </ion-item>
+      </ion-col>
+      <ion-col [size]="1">
+        <ion-item>
+          <ion-datetime [displayFormat]="timeDisplayFormat" [pickerFormat]="timePickerFormat"
+                        [(ngModel)]="timeDropModel"></ion-datetime>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <br/>
+    <br/>
+    <ion-row>
+      <ion-col>
+        <ion-label>Besondere Anforderungen</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let picked of pickedSpecials">
+      <ion-col>
+        <ion-item>
+          <ion-label>{{picked.value}}</ion-label>
+          <ion-button [fill]="iconBtnFill" (click)="deleteSpecial(picked.id)">
+            <ion-icon [name]="'trash'" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col [size]="1">
+        <ion-button [fill]="iconBtnFill" (click)="addSpecial()">
+          <ion-icon slot="icon-only" [name]="'add'"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col [size]="11">
+        <ion-item style="width: 100%;">
+          <ion-select [(ngModel)]="currentlySelectedSpecial" [placeholder]="'Wählen Sie'" style="width: 100%;">
+            <ion-select-option *ngFor="let option of specials" [value]="option">{{option}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <br/>
+    <br/>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Gewicht: </ion-label>
+          <ion-range [min]="0" [max]="40000" [(ngModel)]="weight"></ion-range>
+          <ion-label>&nbsp;&nbsp;&nbsp;{{weight}} Kg</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 
 <ion-footer>

@@ -25,4 +25,8 @@ export class ResultlistPage implements OnInit {
         });
   }
 
+  goToHome(): void {
+      this.router.navigateByUrl('/dashboard');
+  }
+
 }

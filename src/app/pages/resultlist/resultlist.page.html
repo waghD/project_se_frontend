@@ -1,5 +1,10 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [fill]="'clear'" (click)="goToHome()">
+        <ion-icon slot="icon-only" [name]="'home'"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>Ergebnis</ion-title>
   </ion-toolbar>
 </ion-header>
