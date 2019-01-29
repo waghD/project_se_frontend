@@ -22,6 +22,11 @@
           <ion-icon slot="icon-only" [name]="type.iconName" [color]="type.iconColor"></ion-icon>
         </ion-button>
       </ion-col>
+      <ion-col>
+        <ion-item *ngIf="freightTypeSelected">
+          <ion-label>{{freightTypeLabel}}</ion-label>
+        </ion-item>
+      </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
@@ -112,6 +117,70 @@
           <ion-range [min]="0" [max]="40000" [(ngModel)]="weight"></ion-range>
           <ion-label>&nbsp;&nbsp;&nbsp;{{weight}} Kg</ion-label>
         </ion-item>
+      </ion-col>
+    </ion-row>
+    <br/>
+    <br/>
+    <ion-row>
+      <ion-col>
+        <ion-label>Benötigte Lizenzen</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let picked of pickedLicense">
+      <ion-col>
+        <ion-item>
+          <ion-label>{{picked.value}}</ion-label>
+          <ion-button [fill]="iconBtnFill" (click)="deleteLicense(picked.id)">
+            <ion-icon [name]="'trash'" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col [size]="1">
+        <ion-button [fill]="iconBtnFill" (click)="addLicense()">
+          <ion-icon slot="icon-only" [name]="'add'"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col [size]="11">
+        <ion-item style="width: 100%;">
+          <ion-select [(ngModel)]="currentlySelectedLicense" [placeholder]="'Wählen Sie'" style="width: 100%;">
+            <ion-select-option *ngFor="let option of licenses" [value]="option">{{option}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <br/>
+    <br/>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Bewertungen</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2">
+        <ion-item>
+          <ion-label>Kommunikation</ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col size="5">
+        <ion-button [fill]="iconBtnFill" *ngFor="let iconName of ratingCommunicationIcons; index as i" (mouseenter)="communicationEnter(i)" (click)="communicationFixate(i)">
+          <ion-icon slot="icon-only" [name]="iconName"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2">
+        <ion-item>
+          <ion-label>Pünktlichkeit</ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col size="5">
+        <ion-button [fill]="iconBtnFill" *ngFor="let iconName of ratingPunctualityIcons; index as i" (mouseenter)="punctualityEnter(i)" (click)="punctualityFixate(i)">
+          <ion-icon slot="icon-only" [name]="iconName"></ion-icon>
+        </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
