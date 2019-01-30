@@ -1,0 +1,26 @@
+[{
+  "iconName": "bus",
+  "value": "ROAD",
+  "readableName": "LKW Frächter",
+  "count": 174
+}, {
+  "iconName": "boat",
+  "value": "ship",
+  "readableName": "Schiff Frächter",
+  "count": 5
+}, {
+  "iconName": "airplane",
+  "value": "AIR",
+  "readableName": "Luft Frächter",
+  "count": 2
+}, {
+  "iconName": "train",
+  "value": "RAIL",
+  "readableName": "Zug Frächter",
+  "count": 4
+}, {
+  "iconName": "jet",
+  "value": "space",
+  "readableName": "Weltraum Frächter",
+  "count": 0
+}]

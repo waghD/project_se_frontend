@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {HttpsService} from './https.service';
 
 interface TransportTypeData {
   iconName?: string;
@@ -13,32 +14,21 @@ interface TransportTypeData {
 })
 export class FormDataService {
 
-  transportType: TransportTypeData[] = [{
-    iconName: 'bus',
-    value: 'truck',
-    readableName: 'LKW Frächter',
-    count: 174,
-  }, {
-    iconName: 'boat',
-    value: 'ship',
-    readableName: 'Schiff Frächter',
-    count: 5,
-  }, {
-    iconName: 'airplane',
-    value: 'plane',
-    readableName: 'Luft Frächter',
-    count: 2,
-  }, {
-    iconName: 'train',
-    value: 'rail',
-    readableName: 'Zug Frächter',
-    count: 4,
-  }];
+  transportType: TransportTypeData[];
 
-  constructor() { }
+  constructor(private http: HttpsService) {  }
 
-  getTransportTypes(): TransportTypeData[] {
-    return this.transportType;
+  async getTransportTypes(): Promise<TransportTypeData[]> {
+      if (this.transportType) {
+          return this.transportType;
+      } else {
+          return this.http.get({
+              url: '../assets/mockData/transportTypes.json',
+              headers: {}
+          }).then(res => {
+              return res as TransportTypeData[]
+          });
+      }
   }
 
   getSpecials(): string[] {

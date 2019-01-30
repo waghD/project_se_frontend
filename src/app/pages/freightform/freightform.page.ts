@@ -71,23 +71,31 @@ export class FreightformPage implements OnInit {
     this.setupSpecials();
   }
 
-  private setupTransportTypes(): void {
-    this.transportType = this.formService.getTransportTypes().map((type, index: number): TransportTypeData => {
-      return {
-        id: index,
-        active: false,
-        count: type.count,
-        iconColor: 'medium',
-        iconName: type.iconName,
-        readableName: type.readableName,
-        value: type.value,
-        switch: (id: number): void => {
-          this.transportType[id].active = !this.transportType[id].active;
-          this.transportType[id].iconColor = this.transportType[id].active ? 'primary' : 'medium';
-          this.buildFreightTypeLabel();
-        }
-      };
-    });
+  private async setupTransportTypes(): Promise<void> {
+    try{
+      this.transportType = await this.formService.getTransportTypes()
+          .then(res => {
+            return res.map((type, index: number): TransportTypeData => {
+              return {
+                id: index,
+                active: false,
+                count: type.count,
+                iconColor: 'medium',
+                iconName: type.iconName,
+                readableName: type.readableName,
+                value: type.value,
+                switch: (id: number): void => {
+                  this.transportType[id].active = !this.transportType[id].active;
+                  this.transportType[id].iconColor = this.transportType[id].active ? 'primary' : 'medium';
+                  this.buildFreightTypeLabel();
+                }
+              };
+            });
+          });
+    } catch (e) {
+      console.error('error getting transportTypes');
+      console.log(e);
+    }
   }
 
   private setupSpecials(): void {
