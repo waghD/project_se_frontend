@@ -16,7 +16,7 @@ export class ResultlistPage implements OnInit {
   }
 
   clicked(): void {
-    this.router.navigateByUrl('/resultdetails')
+    this.router.navigateByUrl('/freighters/1')
         .then(() => {
           console.log('navigated');
         })

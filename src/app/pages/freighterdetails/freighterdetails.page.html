@@ -5,10 +5,70 @@
         <ion-icon slot="icon-only" [name]="'home'"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>freighterdetails</ion-title>
+    <ion-title>{{freighterName}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [fill]="'clear'" (click)="editing = !editing">
+        <ion-icon slot="icon-only" [name]="'create'"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-grid style="width: 60%;">
+    <ion-row>
+      <ion-col size="6">
+        <img src="../assets/imgs/schachinger_logo.jpg">
+      </ion-col>
+      <ion-col size="6">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-input [(ngModel)]="freighterName" [disabled]="!editing" type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-input [(ngModel)]="freighterAdress" [disabled]="!editing" type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label>Tel:</ion-label>
+                <ion-input [(ngModel)]="freighterTelefone" [disabled]="!editing" type="tel"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label>E-Mail:</ion-label>
+                <ion-input [(ngModel)]="freighterEmail" [disabled]="!editing" type="email"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+    <br/>
+    <br/>
+    <ion-row>
+      <ion-col [size]="3">
+        <ion-item>
+          <ion-label>Transport Typ</ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col *ngFor="let type of transportType" [size]="1">
+        <ion-button [fill]="iconBtnFill" (click)="type.switch(type.id)">
+          <ion-icon slot="icon-only" [name]="type.iconName" [color]="type.iconColor"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

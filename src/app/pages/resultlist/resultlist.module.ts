@@ -11,6 +11,9 @@ const routes: Routes = [
   {
     path: '',
     component: ResultlistPage
+  }, {
+    path: ':id',
+    loadChildren: '../freighterdetails/freighterdetails.module#FreighterdetailsPageModule'
   }
 ];
 

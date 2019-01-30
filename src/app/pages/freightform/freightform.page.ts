@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {ToastController} from '@ionic/angular';
 import {FormDataService} from '../../services/form-data.service';
 
-interface TransportTypeData {
+export interface TransportTypeData {
   id: number;
   iconName: string;
   iconColor: string;
@@ -67,12 +67,14 @@ export class FreightformPage implements OnInit {
     const year = new Date().getFullYear();
     this.minDate = `${year - 1}-01-01`;
     this.maxDate = `${year + 1}-12-31` ;
-    this.setupTransportTypes();
+    this.setupTransportTypes()
+        .then()
+        .catch();
     this.setupSpecials();
   }
 
   private async setupTransportTypes(): Promise<void> {
-    try{
+    try {
       this.transportType = await this.formService.getTransportTypes()
           .then(res => {
             return res.map((type, index: number): TransportTypeData => {
@@ -104,7 +106,6 @@ export class FreightformPage implements OnInit {
   }
 
   private buildFreightTypeLabel(): void {
-    console.log('buildFreigType called');
     this.freightTypeSelected = false;
     this.freightTypeLabel = '';
     let count = 0;
@@ -126,7 +127,7 @@ export class FreightformPage implements OnInit {
   }
 
   send(): void {
-    this.router.navigateByUrl('/resultlist');
+    this.router.navigateByUrl('/freighters');
   }
 
   goToHome(): void {
