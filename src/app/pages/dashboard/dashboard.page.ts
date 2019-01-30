@@ -13,7 +13,7 @@ export class DashboardPage implements OnInit {
   labelColor = 'medium';
 
   adminPage = 'http://127.0.0.1:8000/admin/';
-  newFreightPage = 'http://127.0.0.1:8000/admin/logistics/roadfreightcompany/add/';
+  newFreightPage = 'http://127.0.0.1:8000/freighter/add';
 
   newsItemTemplateMultiplier = Array(10).fill(1);
 

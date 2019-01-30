@@ -10,9 +10,9 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-grid>
+  <ion-grid style="width: 50%;">
     <ion-row>
-      <ion-col [size]="2">
+      <ion-col [size]="3">
         <ion-item>
           <ion-label>Transport Typ</ion-label>
         </ion-item>
@@ -23,11 +23,13 @@
         </ion-button>
       </ion-col>
       <ion-col>
-        <ion-item *ngIf="freightTypeSelected">
+        <ion-item>
           <ion-label>{{freightTypeLabel}}</ion-label>
         </ion-item>
       </ion-col>
     </ion-row>
+    <br/>
+    <br/>
     <ion-row>
       <ion-col>
         <ion-item-divider>
@@ -50,27 +52,29 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col [size]="5">
+      <ion-col [size]="10">
         <ion-item>
           <ion-label>Abholzeitpunkt</ion-label>
           <ion-datetime [displayFormat]="dateDisplayFormat" [pickerFormat]="datePickerFormat"
                         [(ngModel)]="datePickupModel" [max]="maxDate" [min]="minDate"></ion-datetime>
         </ion-item>
       </ion-col>
-      <ion-col [size]="1">
+      <ion-col [size]="2">
         <ion-item>
           <ion-datetime [displayFormat]="timeDisplayFormat" [pickerFormat]="timePickerFormat"
                         [(ngModel)]="timePickupModel"></ion-datetime>
         </ion-item>
       </ion-col>
-      <ion-col [size]="5">
+    </ion-row>
+    <ion-row>
+      <ion-col [size]="10">
         <ion-item>
           <ion-label>Lieferzeitpunkt</ion-label>
           <ion-datetime [displayFormat]="dateDisplayFormat" [pickerFormat]="datePickerFormat"
                         [(ngModel)]="dateDropModel" [max]="maxDate" [min]="minDate"></ion-datetime>
         </ion-item>
       </ion-col>
-      <ion-col [size]="1">
+      <ion-col [size]="2">
         <ion-item>
           <ion-datetime [displayFormat]="timeDisplayFormat" [pickerFormat]="timePickerFormat"
                         [(ngModel)]="timeDropModel"></ion-datetime>
@@ -160,32 +164,35 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="2">
+      <ion-col size="3">
         <ion-item>
           <ion-label>Kommunikation</ion-label>
         </ion-item>
       </ion-col>
-      <ion-col size="5">
+      <ion-col size="6">
         <ion-button [fill]="iconBtnFill" *ngFor="let iconName of ratingCommunicationIcons; index as i" (mouseenter)="communicationEnter(i)" (click)="communicationFixate(i)">
           <ion-icon slot="icon-only" [name]="iconName"></ion-icon>
         </ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="2">
+      <ion-col size="3">
         <ion-item>
           <ion-label>Pünktlichkeit</ion-label>
         </ion-item>
       </ion-col>
-      <ion-col size="5">
+      <ion-col size="6">
         <ion-button [fill]="iconBtnFill" *ngFor="let iconName of ratingPunctualityIcons; index as i" (mouseenter)="punctualityEnter(i)" (click)="punctualityFixate(i)">
           <ion-icon slot="icon-only" [name]="iconName"></ion-icon>
         </ion-button>
       </ion-col>
     </ion-row>
+    <br/>
+    <br/>
+    <ion-row>
+      <ion-col>
+        <ion-button [fill]="searchBtnFill" [expand]="searchBtnExpand" [size]="searchBtnSize" (click)="send()">Suchen</ion-button>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 </ion-content>
-
-<ion-footer>
-  <ion-button [fill]="searchBtnFill" [expand]="searchBtnExpand" [size]="searchBtnSize" (click)="send()" style="width: 90%; margin: 15px auto;">Suchen</ion-button>
-</ion-footer>

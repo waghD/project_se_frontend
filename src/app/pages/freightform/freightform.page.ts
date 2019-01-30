@@ -26,7 +26,7 @@ export class FreightformPage implements OnInit {
   searchBtnSize = 'default';
   iconBtnFill = 'clear';
 
-  freightTypeLabel = '';
+  freightTypeLabel = 'Bitte Typ wählen.';
   freightTypeSelected = false;
   transportType: TransportTypeData[] = [];
 
@@ -111,6 +111,7 @@ export class FreightformPage implements OnInit {
       }
     }
     if (activeCount >= 2) { this.freightTypeLabel += `, ${count} Frächter total`; }
+    if (!this.freightTypeSelected) {this.freightTypeLabel = 'Bitte Typ wählen.'}
   }
 
   ngOnInit() {
