@@ -12,15 +12,14 @@
                 <ion-card-title>Übersicht</ion-card-title>
               </ion-card-header>
               <ion-card-content style="font-size: 16px;">
-                Es befinden sich derzeit 1724 Frächter in dieser Datenbank mit einem Gesamt Fuhrpark von: <br/>
+                Es befinden sich derzeit {{metaData.airfreight + metaData.railfreight + metaData.roadfreight + metaData.shipfreight}} Frächter in dieser Datenbank mit einem Gesamt Fuhrpark von: <br/>
                 <ul>
-                  <li>7120 LKWs</li>
-                  <li>14212 Kleintransporter</li>
-                  <li>10 Züge</li>
-                  <li>0 Schiffe</li>
-                  <li>2 Flugzeuge</li>
+                  <li>{{metaData.roadfreight}} LKWs</li>
+                  <li>{{metaData.railfreight}} Züge</li>
+                  <li>{{metaData.shipfreight}} Schiffe</li>
+                  <li>{{metaData.airfreight}} Flugzeuge</li>
                 </ul>
-                Dabei wird in insgesamt 20 Länder geliefert.
+                Dabei wird in insgesamt {{metaData.countries.length}} Länder geliefert.
               </ion-card-content>
               <ion-content style="height: 52vh;">
                 <ion-list>
@@ -73,9 +72,9 @@
                   <ion-card-title>Suche</ion-card-title>
                 </ion-card-header>
                 <div class="btn-card-outer">
-                  <h4 class="btn-card-title">Es befinden sich 1724 Frächter in der Datenbank</h4>
+                  <h4 class="btn-card-title">Es befinden sich {{metaData.airfreight + metaData.railfreight + metaData.roadfreight + metaData.shipfreight}} Frächter in der Datenbank</h4>
                 </div>
-                <ion-button [expand]="'full'" [fill]="'solid'" [color]="btnColor" class="card-btn card-btn-left">Alle Frächter anzeigen</ion-button>
+                <ion-button [expand]="'full'" [fill]="'solid'" [color]="btnColor" class="card-btn card-btn-left" (click)="goToList()">Alle Frächter anzeigen</ion-button>
                 <ion-button [expand]="'full'" [fill]="'solid'" [color]="btnColor" class="card-btn card-btn-right" (click)="goToForm()">Frächter suchen</ion-button>
               </ion-card>
             </ion-col>

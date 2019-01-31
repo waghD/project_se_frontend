@@ -7,7 +7,7 @@
     </ion-buttons>
     <ion-title>{{freighterName}}</ion-title>
     <ion-buttons slot="end">
-      <ion-button [fill]="'clear'" (click)="editing = !editing">
+      <ion-button [fill]="'clear'" [href]="'http://127.0.0.1:8000/freighter/edit/' + id">
         <ion-icon slot="icon-only" [name]="'create'"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -18,7 +18,7 @@
   <ion-grid style="width: 60%;">
     <ion-row>
       <ion-col size="6">
-        <img src="../assets/imgs/schachinger_logo.jpg">
+        <img [src]="logo" style="max-height: 20vh;">
       </ion-col>
       <ion-col size="6">
         <ion-grid>
@@ -36,29 +36,13 @@
               </ion-item>
             </ion-col>
           </ion-row>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label>Tel:</ion-label>
-                <ion-input [(ngModel)]="freighterTelefone" [disabled]="!editing" type="tel"></ion-input>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label>E-Mail:</ion-label>
-                <ion-input [(ngModel)]="freighterEmail" [disabled]="!editing" type="email"></ion-input>
-              </ion-item>
-            </ion-col>
-          </ion-row>
         </ion-grid>
       </ion-col>
     </ion-row>
     <br/>
     <br/>
     <ion-row>
-      <ion-col [size]="3">
+      <ion-col [size]="4">
         <ion-item>
           <ion-label>Transport Typ</ion-label>
         </ion-item>
@@ -69,6 +53,29 @@
         </ion-button>
       </ion-col>
     </ion-row>
+    <br/>
+    <br/>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Fuhrpark</ion-label>
+          <ion-button slot="end" [fill]="iconBtnFill" [href]="vehicleBaseUrl + '/add'" [color]="btnColor">
+            <ion-icon slot="icon-only" [name]="'add'"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item *ngFor="let vehicle of vehicles">
+            <ion-label>{{vehicle.name}}</ion-label>
+            <ion-button slot="end" [fill]="iconBtnFill" [href]="vehicleBaseUrl + '/edit/' + vehicle.id" [color]="btnColor">
+              <ion-icon slot="icon-only" [name]="'create'"></ion-icon>
+            </ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
   </ion-grid>
-
 </ion-content>

@@ -25,6 +25,8 @@ export class FreightformPage implements OnInit {
   searchBtnExpand = 'block';
   searchBtnSize = 'default';
   iconBtnFill = 'clear';
+  btnColor = 'secondary';
+  btnColorNegative = 'danger';
 
   freightTypeLabel = 'Bitte Typ wählen.';
   freightTypeSelected = false;
@@ -70,7 +72,9 @@ export class FreightformPage implements OnInit {
     this.setupTransportTypes()
         .then()
         .catch();
-    this.setupSpecials();
+    setInterval(() => {
+      this.setupSpecials();
+    }, 100);
   }
 
   private async setupTransportTypes(): Promise<void> {
@@ -120,14 +124,15 @@ export class FreightformPage implements OnInit {
       }
     }
     if (activeCount >= 2) { this.freightTypeLabel += `, ${count} Frächter total`; }
-    if (!this.freightTypeSelected) {this.freightTypeLabel = 'Bitte Typ wählen.'}
+    if (!this.freightTypeSelected) {this.freightTypeLabel = 'Bitte Typ wählen.'; }
   }
 
   ngOnInit() {
   }
 
   send(): void {
-    this.router.navigateByUrl('/freighters');
+    const id = this.formService.submitForm(this.transportType[0].value, this.communicationRating);
+    this.router.navigateByUrl(`/freighters?id=${id}`);
   }
 
   goToHome(): void {
