@@ -112,19 +112,19 @@ export class FreighterdetailsPage implements OnInit {
     getVehicles(): void {
         switch (this.freighterType) {
             case 'ROAD': {
-                this.vehicleFetchUrl = `http://127.0.0.1:8000/api/roadfreight/${this.id}/trucks`;
+                this.vehicleFetchUrl = `http://127.0.0.1:8000/api/roadfreight/${this.id}/trucks/`;
                 break;
             }
             case 'AIR': {
-                this.vehicleFetchUrl = `http://127.0.0.1:8000/api/airfreight/${this.id}/planes`;
+                this.vehicleFetchUrl = `http://127.0.0.1:8000/api/airfreight/${this.id}/planes/`;
                 break;
             }
             case 'SHIP': {
-                this.vehicleFetchUrl = `http://127.0.0.1:8000/api/seafreight/${this.id}/ships`;
+                this.vehicleFetchUrl = `http://127.0.0.1:8000/api/seafreight/${this.id}/ships/`;
                 break;
             }
             case 'RAIL': {
-                this.vehicleFetchUrl = `http://127.0.0.1:8000/api/railfreight/${this.id}/trains`;
+                this.vehicleFetchUrl = `http://127.0.0.1:8000/api/railfreight/${this.id}/trains/`;
                 break;
             }
         }
